@@ -7,7 +7,7 @@ urlpatterns = [
     path('cats/<int:cat_id>/', views.cat_detail, name='cat-detail'),
     path('cats/', views.cat_index, name='cat-index'),
     path('about/', views.about, name='about'),
-    path('', views.home, name='home'),
+    path('', views.Home.as_view(), name='home'),
     path('cats/create/', views.CatCreate.as_view(), name='cat-create'),
     path(
         'cats/<int:cat_id>/add-feeding/', 
@@ -21,5 +21,7 @@ urlpatterns = [
     path('toys/<int:pk>/delete/', views.ToyDelete.as_view(), name='toy-delete'),
     path('cats/<int:cat_id>/associate-toy/<int:toy_id>/', views.associate_toy, name='associate-toy'),
     path('cats/<int:cat_id>/remove-toy/<int:toy_id>/', views.remove_toy, name='remove-toy'),
+    path('accounts/signup/', views.signup, name='signup'),
+
 
 ]
